@@ -10,6 +10,10 @@ public class List<Type> {
     }
 
     public void add(Type value) {
+        if(this.firstFreeIndex == this.values.length){
+            grow();
+        }
+
         this.values[this.firstFreeIndex] = value;
         this.firstFreeIndex++;
     }
