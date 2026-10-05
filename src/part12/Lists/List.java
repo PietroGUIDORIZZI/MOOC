@@ -37,4 +37,14 @@ public class List<Type> {
 
         return false;
     }
+
+    public void remove(Type value){
+        for (int i = 0; i < this.firstFreeIndex; i++) {
+            if(value == this.values[i] || this.values[i].equals(value)){
+                this.values[i] = null;
+                this.firstFreeIndex--;
+                return;
+            }
+        }
+    }
 }
