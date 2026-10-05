@@ -13,4 +13,14 @@ public class List<Type> {
         this.values[this.firstFreeIndex] = value;
         this.firstFreeIndex++;
     }
+
+    private void grow() {
+        int newSize = this.values.length + this. values.length / 2;
+        Type[] newValues = (Type[]) new Object[newSize];
+        for(int i = 0; i < this.values.length; i++){
+            newValues[i] = this.values[i];
+        }
+
+        this.values = newValues;
+    }
 }
